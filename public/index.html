@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+   <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+   
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="fas fa-running">Life<span class="text-primary">Style</span></i>
+        </h1>
+        <form id="gym-form" action="/" method="get">
+            <div class="form-group">
+                <label for="exercise">Exercício</label>
+                <select id="exercise" class="form-control">
+                    <option value="" disabled selected>Selecione o Exercício</option>
+                    <optgroup label="Coxas e Glúteos">
+                        <option value="Agachamento">Agachamento</option>
+                        <option value="Avanço">Avanço</option>
+                        <option value="Banco Extensor">Banco Extensor</option>
+                        <option value="Banco Flexor">Banco Flexor</option>
+                        <option value="Flexão Joelho em Pé">Flexão Joelho em Pé</option>
+                        <option value="Banco Adutor">Banco Adutor</option>
+                        <option value="Banco Abdutor">Banco Abdutor</option>
+                        <option value="Adução Quadril - Movi. Livre">Adução Quadril - Movi. Livre</option>
+                        <option value="Abdução Quadril - Movi. Livre">Adução Quadril - Movi. Livre</option>
+                        <option value="Leg-Press 45°">Leg-Press 45°</option>
+                        <option value="Glúteo na Polia Baixa">Glúteo na Polia Baixa</option>
+                        <option value="Glúteo C/ Joelho Estendido">Glúteo C/ Joelho Estendido</option>
+                        <option value="Glúteo C/ Joelho Fletido">Glúteo C/ Joelho Fletido</option>
+                        <option value="Glúteo Maquina">Glúteo Maquina</option>
+                        <option value="Stiff">Stiff</option>
+                      </optgroup>
+                      <optgroup label="Panturrilha">
+                        <option value="Panturrilha Livre">Panturrilha Livre</option>
+                        <option value="Pant. Livre Unilateral">Pant. Livre Unilateral</option>
+                        <option value="Pant. Livre C/ Rot. Externa">Pant. Livre C/ Rot. Externa</option>
+                        <option value="Pant. Livre C/ Rot. Interna">Pant. Livre C/ Rot. Interna</option>
+                        <option value="Pant. Livre Unilateral C/ Halteres">Pant. Livre Unilateral C/ Halteres</option>
+                        <option value="Panturrilha Leg. 45°">Panturrilha Leg. 45°</option>
+                        <option value="Pant. em Pé no Aparelho">Pant. em Pé no Aparelho</option>
+                      </optgroup>
+                      <optgroup label="Bíceps">
+                        <option value="Rosca Direta">Rosca Direta</option>
+                        <option value="Rosca Direta Barra W">Rosca Direta Barra W</option>
+                        <option value="Rosca Alternada">Rosca Alternada</option>
+                        <option value="Rosca Scoth Aparelho">Rosca Scoth Aparelho</option>
+                        <option value="Rosca Concentrada">Rosca Concentrada</option>
+                        <option value="Rosca 21">Rosca 21</option>
+                        <option value="Rosca com Halteres">Rosca com Halteres</option>
+                        <option value="Rosca na Polia Baixa">Rosca na Polia Baixa</option>
+                        <option value="Rosca Hammer">Rosca Hammer</option>
+                        <option value="Rosca Hammer Alternada">Rosca Hammer Alternada</option>
+                      </optgroup>
+                      <optgroup label="Ante-Braço">
+                        <option value="Rosca Punho Direto">Rosca Punho Direto</option>
+                        <option value="Rosca Inversa">Rosca Inversa</option>
+                        <option value="Rotação de Punho">Rotação de Punho</option>
+                      </optgroup>
+                      <optgroup label="Ombros">
+                        <option value="Desenvolvimento Posterior">Desenvolvimento Posterior</option>
+                        <option value="Desenvolvimento Anterior">Desenvolvimento Anterior</option>
+                        <option value="Desenv. com Halteres">Desenv. com Halteres</option>
+                        <option value="Desenv. Frontal C/ Rotação">Desenv. Frontal C/ Rotação</option>
+                        <option value="Desenv. Frontal C/ Rotação Alternada">Desenv. Frontal C/ Rotação Alternada</option>
+                        <option value="Abdução Ombro Pronado">Abdução Ombro Pronado</option>
+                        <option value="Abdução Ombro Supinado">Abdução Ombro Supinado</option>
+                        <option value="Abd. Ombros Uni. na Polia Baixa">Abd. Ombros Uni. na Polia Baixa</option>
+                        <option value="Flex. Ombro Front. Pronado">Flex. Ombro Front. Pronado</option>
+                        <option value="Flex. Ombro Front. Supinado">Flex. Ombro Front. Supinado</option>
+                      </optgroup>
+                      <optgroup label="Trapézio">
+                        <option value="Remada Alta">Remada Alta</option>
+                        <option value="Encolhimento Ombros">Encolhimento Ombros</option>
+                        <option value="Enco. Ombros C/ Rotação"></option>
+                      </optgroup>
+                      <optgroup label="Peitoral">
+                        <option value="Supino Reto">Supino Reto</option>
+                        <option value="Supino 45°">Supino 45°</option>
+                        <option value="Supino Declinado">Supino Declinado</option>
+                        <option value="Supino com Halteres">Supino com Halteres</option>
+                        <option value="Supino 45° com Halteres">Supino 45° com Halteres</option>
+                        <option value="Crucifixo Reto">Crucifixo Reto</option>
+                        <option value="Crucifixo 45°">Crucifixo 45°</option>
+                        <option value="Barra Paralelas (Aberto)">Barra Paralelas (Aberto)</option>
+                        <option value="Voador">Voador</option>
+                        <option value="Cross-Over">Cross-Over</option>
+                        <option value="Crucifixo Declinado">Crucifixo Declinado</option>
+                        <option value="Pull Over">Pull Over</option>
+                        <option value="Flexão">Flexão</option>
+                      </optgroup>
+                      <optgroup label="Costas">
+                        <option value="Pulley Posterior">Pulley Posterior</option>
+                        <option value="Pulley Anterior">Pulley Anterior</option>
+                        <option value="Pulley Supinado">Pulley Supinado</option>
+                        <option value="Barra Fixa por Trás">Barra Fixa por Trás</option>
+                        <option value="Barra Fixa Frontal">Barra Fixa Frontal</option>
+                        <option value="Barra Fixa Supinada">Barra Fixa Supinada</option>
+                        <option value="Remada Curvada">Remada Curvada</option>
+                        <option value="Remada Curvada Unilateral">Remada Curvada Unilateral</option>
+                        <option value="Remada Livre">Remada Livre</option>
+                        <option value="Crucifixo Inverso">Crucifixo Inverso</option>
+                        <option value="Pull Over">Pull Over</option>
+                    </optgroup>
+                    <optgroup label="Tríceps">
+                        <option value="Tríceps Pulley">Tríceps Pulley</option>
+                        <option value="Tríceps Pulley Unilateral">Tríceps Pulley Unilateral</option>
+                        <option value="Tríceps Pulley Supinado">Tríceps Pulley Supinado</option>
+                        <option value="Tríceps com Corda">Tríceps com Corda</option>
+                        <option value="Tríceps Testa com Barra">Tríceps Testa com Barra</option>
+                        <option value="Tríceps Testa c/ Halteres">Tríceps Testa c/ Halteres</option>
+                        <option value="Tríceps Francês">Tríceps Francês</option>
+                        <option value="Tríceps Francês C/Halteres">Tríceps Francês c/ Halteres</option>
+                        <option value="Tríceps Coice">Tríceps Coice</option>
+                        <option value="Tríceps Coice Unilateral">Tríceps Coice Unilateral</option>
+                        <option value="Barras Paralelas(Fechada)">Barras Paralelas(Fechada)</option>
+                        <option value="Tríceps no Banco">Tríceps no Banco</option>
+                    </optgroup>
+                    <optgroup label="Abdômen">
+                        <option value="Abdômen Supra">Abdômen Supra</option>
+                        <option value="Abdômen Infra">Abdômen Infra</option>
+                        <option value="Abdômen Oblíquo">Abdômen Oblíquo</option>
+                        <option value="Abdômen Rodinha">Abdômen Rodinha</option>
+                        <option value="Hiper Extensor">Hiper Extensor</option>
+                        <option value="Flexão Trono Lateral">Flexão Trono Lateral</option>
+                    </optgroup>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exercise">Séries</label>
+                <input type="text" id="serie" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="rep">Repetições</label>
+                <input type="text" id="rep" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="weight">Peso</label>
+                <input type="text" id="weight" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="weight">Intervalo</label>
+                <input type="text" id="intervalo" class="form-control">
+            </div>
+            <input type="submit" value="Adicionar Exercício" class="btn btn-primary btn-block">
+        </form>
+        <br>
+        <div class="form-group">
+            <form action="/" method="post">
+        <button type="submit" id="myButton" class="form-control" value="Baixar Ficha" class="btn btn-primary btn-block">Enviar Ficha</button ><br><!--onclick="downloadAsExcel()"--></form>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th>Exercício</th>
+                    <th>Séries</th>
+                    <th>Repetições</th>
+                    <th>Peso</th>
+                    <th>Intervalo</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id="gym-list"></tbody>
+        </table>
+    </div>
+    <script src="app1.js"></script>
+    <script>
+    </script>
+</body>
+<style>
+    .text-primary{
+        color: yellow !important;
+    }
+    input[type="submit"],#myButton{
+        background-color: yellow !important;
+        color: black;
+        border-color: white ;
+        text-shadow: 1px;
+    }
+    input[type="submit"]:hover,#myButton:hover{
+        color:white !important;
+    }
+    @media (min-width:401px){
+        .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    padding-right: 0px !important;
+}
+    }
+
+</style>
+</html>
