@@ -148,7 +148,7 @@ console.log(data);
 
 document.querySelector('#enviar').addEventListener('submit', (e) => {
   //  console.log(data);
-        fetch("http://localhost:3333/send",{
+        fetch("https://map-fichas-academia.onrender.com/send",{
             method: "POST", 
             body: JSON.stringify(data),
             headers: {
@@ -164,7 +164,7 @@ document.querySelector('#enviar').addEventListener('submit', (e) => {
 
 document.querySelector("#snome").addEventListener('submit', (e)=>{
     const nome = document.querySelector("#nome").value;
-    fetch("http://localhost:3333/nome",{
+    fetch("https://map-fichas-academia.onrender.com/nome",{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
