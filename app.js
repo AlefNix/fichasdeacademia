@@ -61,6 +61,9 @@ worksheet.columns = [
     const transporter = nodemailer.createTransport({
         host: 'SMTP.office365.com',
     port: 587,
+        tls: {
+       ciphers:'SSLv3'
+    },
     auth: {
         user: 'fichamapacademia@outlook.com',
         pass: 'Maplib98723*'
