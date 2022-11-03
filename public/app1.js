@@ -93,6 +93,7 @@ class Store {
 
 document.addEventListener('DOMContentLoaded', UI.displayWorkouts);
 
+
 //Event to Add
 document.querySelector('#gym-form').addEventListener('submit', (e) => {
 
@@ -140,31 +141,43 @@ document.querySelector('#gym-list').addEventListener('click', (e) => {
     UI.showAlert('Exercício Excluido', 'success');
 });
 
-/////////////
-//const data = JSON.parse(localStorage.getItem('workouts'));
-
-/*const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-const EXCEL_EXTENSION = '.xlsx';
+const data = JSON.parse(localStorage.getItem('workouts'));
+console.log(JSON.stringify(data));
+console.log(data);
 
 
-function downloadAsExcel(){
-    const worksheet = XLSX.utils.json_to_sheet(data);
-    const workbook = {
-        Sheets:{
-            'data':worksheet
-        },
-        SheetNames:['data']
-    };
-    const excelBuffer = XLSX.write(workbook,{bookType:'xlsx', type:'array'});
-    console.log(excelBuffer);
-    saveExcel(excelBuffer, '')
-};
+document.querySelector('#enviar').addEventListener('submit', (e) => {
+  //  console.log(data);
+        fetch("http://localhost:3333/send",{
+            method: "POST", 
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type" : "application/json"
+            },
+        }).then(res =>{res.json(data)},console.log(data))  
+          .then(data => console.log(data))
+          .catch(err => console.log(err));
+    
+        e.preventDefault();
+        UI.showAlert('Ficha enviada', 'success');
+    });
 
-function saveExcel(buffer,filename){
-    const data = new Blob([buffer],{type: EXCEL_TYPE});
-    saveAs(data,filename+'Ficha')
-};
-*/
+document.querySelector("#snome").addEventListener('submit', (e)=>{
+    const nome = document.querySelector("#nome").value;
+    fetch("http://localhost:3333/nome",{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: nome
+            })
+    }).then(res =>{res.json(nome)},console.log(nome))  
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
 
 
-document.query
+        e.preventDefault();
+        UI.showAlert('Nome Salvo', 'success');
+        document.querySelector("#myButton").disabled = false;
+})

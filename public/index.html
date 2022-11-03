@@ -15,7 +15,7 @@
         <h1 class="display-4 text-center">
             <i class="fas fa-running">Life<span class="text-primary">Style</span></i>
         </h1>
-        <form id="gym-form" action="/" method="get">
+        <form id="gym-form">
             <div class="form-group">
                 <label for="exercise">Exercício</label>
                 <select id="exercise" class="form-control">
@@ -153,8 +153,17 @@
         </form>
         <br>
         <div class="form-group">
-            <form action="/" method="post">
-        <button type="submit" id="myButton" class="form-control" value="Baixar Ficha" class="btn btn-primary btn-block">Enviar Ficha</button ><br><!--onclick="downloadAsExcel()"--></form>
+            <form action="/nome" method="post" id="snome">
+                <div class="form-group">
+                    <label for="weight">Nome do Aluno</label>
+                    <input type="text" id="nome" class="form-control" name="nome" required>
+                </div>
+                <button type="submit" class="form-control" class="btn btn-primary btn-block" id="save" >Salvar Nome</button>
+            </form>
+        </div>
+        <div class="form-group" >
+            <form id="enviar" action="/send" method="post">
+        <button type="submit" id="myButton" class="form-control" value="Baixar Ficha" class="btn btn-primary btn-block" disabled>Enviar Ficha</button ><br><!--onclick="downloadAsExcel()"--></form>
         <table class="table table-striped mt-5">
             <thead>
                 <tr>
@@ -178,14 +187,26 @@
     .text-primary{
         color: yellow !important;
     }
+    #save{
+        background-color: yellow;
+        color: black;
+        border-color: white ;
+        text-shadow: 1px;
+        font-style: bold;
+    }
     input[type="submit"],#myButton{
         background-color: yellow !important;
         color: black;
         border-color: white ;
         text-shadow: 1px;
     }
-    input[type="submit"]:hover,#myButton:hover{
+    input[type="submit"]:hover,#myButton:hover,#save:hover{
         color:white !important;
+    }
+    #myButton:disabled{
+        background-color: gray !important;
+        border-color: gray ;
+        color:black !important;
     }
     @media (min-width:401px){
         .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
