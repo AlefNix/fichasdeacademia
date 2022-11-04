@@ -62,8 +62,8 @@ worksheet.columns = [
         host: "smtp.mailtrap.io",
   port: 2525,
   auth: {
-    user: "9b8fe9c56dbb80",
-    pass: "bd0bed9e68eabf"
+    user: "ad172238fad983",
+    pass: "7890fa561d8eda"
   }
     });
 const mailOptions = {
