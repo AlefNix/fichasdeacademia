@@ -160,6 +160,7 @@ document.querySelector('#enviar').addEventListener('submit', (e) => {
     
         e.preventDefault();
         UI.showAlert('Ficha enviada', 'success');
+        setTimeout(() => window.location.reload(), 3000);
     });
 
 document.querySelector("#snome").addEventListener('submit', (e)=>{
