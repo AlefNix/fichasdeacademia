@@ -59,15 +59,12 @@ worksheet.columns = [
     });
     const buffer = await workbook.xlsx.writeBuffer();
     const transporter = nodemailer.createTransport({
-        host: 'SMTP.office365.com',
-    port: 587,
-        tls: {
-       ciphers:'SSLv3'
-    },
-    auth: {
-        user: 'fichamapacademia@outlook.com',
-        pass: 'Maplib98723*'
-    }
+        host: "smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "9b8fe9c56dbb80",
+    pass: "bd0bed9e68eabf"
+  }
     });
 const mailOptions = {
         from: 'fichamapacademia@outlook.com',
